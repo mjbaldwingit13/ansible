@@ -1,7 +1,6 @@
---- 
-- 
-  community.kubernetes.k8s_info: 
-    field_selectors: 
-      - status.phase=Running
+---
+- name: Search for all running pods
+  community.kubernetes.k8s_info:
     kind: Pod
-  name: "Search for all running pods"
+    field_selectors:
+      - status.phase=Running
