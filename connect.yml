@@ -1,5 +1,4 @@
 ---
-
 - name: Search for all running pods
   community.kubernetes.k8s_info:
     kind: Pod
