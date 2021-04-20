@@ -6,8 +6,14 @@
   collections: 
     - community.kubernetes
   
-  tasks:
-  - name: GET WORKER NODE DETAILS
-    community.kubernetes.k8s_info:
-      kind: Node
-      namespace: default 
+#  tasks:
+#  - name: GET WORKER NODE DETAILS
+#    community.kubernetes.k8s_info:
+#      kind: Node
+#      namespace: default
+      
+  - name: list of all pods from namespace
+  k8s_facts:
+    api_key: "{{ k8s_auth_results.k8s_auth.api_key }}"
+    kind: Pod
+  register: pod-list
